@@ -239,7 +239,7 @@ export default function Navbar() {
           href="/"
           onClick={() => setOpen(false)}
           className="relative block h-7 w-[100px] shrink-0"
-          aria-label="CloudScap home"
+          aria-label="9x Solutions home"
         >
           <Image
             src="/images/logo.png"
