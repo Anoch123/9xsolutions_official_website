@@ -30,11 +30,7 @@ export default function WhatWeDo() {
                   className="group flex gap-6 border-b border-slate-200 py-8 sm:gap-10"
                 >
                   <span
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold transition-transform duration-300 group-hover:scale-105"
-                    style={{
-                      backgroundColor: `${pillar.color}14`,
-                      color: pillar.color,
-                    }}
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#4F66FF]/[0.08] text-xs font-semibold text-[#4F66FF] transition-transform duration-300 group-hover:scale-105"
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -42,12 +38,11 @@ export default function WhatWeDo() {
                     <h3 className="flex items-center gap-2.5 text-lg font-semibold tracking-tight text-[#0B1020]">
                       {pillar.title}
                       <span
-                        className="h-1.5 w-1.5 rounded-full"
-                        style={{ backgroundColor: pillar.color }}
+                        className="h-1.5 w-1.5 rounded-full bg-[#4F66FF]"
                       />
                     </h3>
                     <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-500">
-                      {pillar.detail}
+                      {pillar.text}
                     </p>
                   </div>
                 </div>
