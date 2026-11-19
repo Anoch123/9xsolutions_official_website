@@ -1,6 +1,6 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/Navbar";
-import { Arrow, Eyebrow } from "@/components/ui/icons";
+import { Arrow, ArrowUpRight, Eyebrow } from "@/components/ui/icons";
 import Link from "next/link";
 
 const h2Class =
@@ -123,7 +123,9 @@ export default function OurStory() {
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff0000] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(255,0,0,0.35)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_40px_rgba(255,0,0,0.55)]"
               >
                 Talk to us
-                <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#ff0000] transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="scale-125" />
+                </span>
               </Link>
               <a
                 href="#story"
@@ -154,9 +156,9 @@ export default function OurStory() {
             </p>
             <p>
               That belief shaped how we hire, how we work, and how we treat
-              every client. We are engineers first, so we care as much about
-              how something is built as how it looks, and we care most about
-              whether it works for the people using it.
+              every client. We are engineers first, so we care as much about how
+              something is built as how it looks, and we care most about whether
+              it works for the people using it.
             </p>
           </div>
         </div>
@@ -184,31 +186,88 @@ export default function OurStory() {
 
       {/* Timeline */}
       <section className={sectionClass}>
-        <Eyebrow>Our journey</Eyebrow>
-        <h2 className={h2Class}>How we got here.</h2>
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <Eyebrow>Our journey</Eyebrow>
+            <h2 className={h2Class}>How we got here.</h2>
+          </div>
+          <p className="max-w-sm text-[16px] leading-relaxed text-slate-500">
+            Five chapters, one belief. Scroll to follow the story.
+          </p>
+        </div>
 
-        <ol className="mt-14 border-l border-slate-200">
-          {timeline.map((t) => (
-            <li key={t.title} className="relative pb-12 pl-8 last:pb-0 md:pl-12">
-              <span
-                className="absolute -left-[7px] top-2 h-3.5 w-3.5 rounded-full border-2 border-white bg-[#ff0000] shadow-[0_0_0_4px_rgba(255,0,0,0.12)]"
-                aria-hidden="true"
-              />
-              <div className="grid gap-3 md:grid-cols-[200px_1fr] md:gap-10">
-                <p className="text-[15px] font-semibold text-[#4F66FF]">
-                  {t.when}
-                </p>
-                <div>
-                  <h3 className="text-[22px] font-semibold tracking-[-0.02em] text-slate-900">
-                    {t.title}
-                  </h3>
-                  <p className="mt-2 max-w-2xl text-[16px] leading-relaxed text-slate-600">
-                    {t.body}
-                  </p>
-                </div>
-              </div>
-            </li>
-          ))}
+        <ol className="mt-14 flex flex-col gap-6 md:mt-20">
+          {timeline.map((t, i) => {
+            const isLast = i === timeline.length - 1;
+            return (
+              <li
+                key={t.title}
+                style={{ ["--stack" as string]: `${6.5 + i * 1.25}rem` }}
+                className="md:sticky md:top-[var(--stack)]"
+              >
+                <article
+                  className={`relative overflow-hidden rounded-[32px] border p-8 shadow-[0_-20px_50px_rgba(15,23,42,0.06)] md:rounded-[44px] md:p-14 ${
+                    isLast
+                      ? "border-white/10 bg-[#0B1020] text-white"
+                      : "border-slate-200 bg-slate-50 text-slate-900"
+                  }`}
+                >
+                  {isLast && (
+                    <div
+                      className="pointer-events-none absolute inset-0"
+                      aria-hidden="true"
+                    >
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_0%_0%,rgba(255,0,0,0.18),transparent_65%)]" />
+                      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_100%_100%,rgba(79,102,255,0.25),transparent_65%)]" />
+                    </div>
+                  )}
+
+                  <div className="relative grid items-center gap-8 md:grid-cols-[auto_1fr] md:gap-16">
+                    {/* Giant numeral */}
+                    <span
+                      aria-hidden="true"
+                      className={`select-none text-[clamp(4.5rem,11vw,10rem)] font-semibold leading-[0.85] tracking-[-0.06em] bg-clip-text text-transparent ${
+                        isLast
+                          ? "bg-gradient-to-b from-white/60 to-white/5"
+                          : "bg-gradient-to-b from-[#4F66FF] to-[#4F66FF]/10"
+                      }`}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+
+                    <div>
+                      <span
+                        className={`inline-flex items-center gap-2.5 rounded-full border py-1.5 pl-3 pr-4 text-[13px] font-medium ${
+                          isLast
+                            ? "border-white/10 bg-white/5 text-slate-300"
+                            : "border-slate-200 bg-white text-[#4F66FF]"
+                        }`}
+                      >
+                        <span className="relative flex h-2 w-2">
+                          {isLast && (
+                            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff3b3b] opacity-75" />
+                          )}
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ff0000]" />
+                        </span>
+                        {t.when}
+                      </span>
+
+                      <h3 className="mt-5 max-w-2xl text-[clamp(1.5rem,2.8vw,2.6rem)] font-semibold leading-[1.1] tracking-[-0.03em]">
+                        {t.title}
+                      </h3>
+                      <p
+                        className={`mt-4 max-w-2xl text-[16px] leading-relaxed md:text-[18px] ${
+                          isLast ? "text-slate-300" : "text-slate-600"
+                        }`}
+                      >
+                        {t.body}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </li>
+            );
+          })}
         </ol>
       </section>
 

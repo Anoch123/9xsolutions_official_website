@@ -34,3 +34,14 @@ export type Project = {
   visual: VisualKey;
   image?: string;
 };
+
+export type Status = "idle" | "sending" | "success" | "error";
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  photo?: string;
+  logo?: string;
+};

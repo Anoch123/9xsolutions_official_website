@@ -3,7 +3,7 @@ import { AUDIENCES, BENEFIT, FAQS, OUTCOMES, PROCESS, SERVICES } from "@/lib/con
 import Navbar from "@/components/Navbar";
 import { pickVisual, VISUALS } from "@/components/services-components/ServiceVisuals";
 import SectionHead from "@/components/page-header";
-import { Arrow, Check, Eyebrow } from "@/components/ui/icons";
+import { Arrow, ArrowUpRight, Check, Eyebrow } from "@/components/ui/icons";
 import FaqSection from "@/components/services-components/faqisection";
 import CTASection from "@/components/cta-section";
 import AllServices from "@/components/services-components/all-services";
@@ -60,10 +60,12 @@ export default function ServicesPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/talk-to-us"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff0000] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(255,0,0,0.35)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_40px_rgba(255,0,0,0.55)]"
+                className="group inline-flex items-center gap-4 rounded-full bg-[#ff0000] py-2 pl-8 pr-2 text-[16px] font-semibold text-white shadow-[0_10px_40px_rgba(255,0,0,0.4)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_50px_rgba(255,0,0,0.6)]"
               >
                 Book a Consultation
-                <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#ff0000] transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="scale-125" />
+                </span>
               </Link>
               <a
                 href="#all-services"
@@ -75,7 +77,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Jump chips */}
-          {/* <div className="mt-12 flex w-full flex-wrap gap-2.5 border-t border-white/10 pt-8">
+          <div className="mt-12 flex w-full flex-wrap gap-2.5 border-t border-white/10 pt-8">
             {SERVICES.map((s, i) => (
               <a
                 key={s.label}
@@ -88,7 +90,7 @@ export default function ServicesPage() {
                 {s.label}
               </a>
             ))}
-          </div> */}
+          </div>
         </div>
       </header>
 

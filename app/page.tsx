@@ -4,8 +4,6 @@ import FinalCTA from "@/components/home-components/FinalCTA";
 import HowWeWork from "@/components/home-components/HowWeWork";
 import Industries from "@/components/home-components/Industries";
 import Partners from "@/components/home-components/Partners";
-import SelectedWork from "@/components/home-components/SelectedWork";
-import TechStrip from "@/components/home-components/TechStrip";
 import WhyUs from "@/components/home-components/WhyUs";
 import Services from "@/components/services-components/services";
 
@@ -17,7 +15,7 @@ export default function Home() {
       {/* <SelectedWork /> */}
       <WhyUs />
       <HowWeWork />
-      {/* <Industries /> */}
+      <Industries />
       <Partners />
       <FinalCTA />
       <Footer />

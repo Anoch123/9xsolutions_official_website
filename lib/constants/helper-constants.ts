@@ -1,9 +1,10 @@
 import { VisualKey } from "@/components/services-components/ServiceVisuals";
-import { FooterRow, NavLink, Project, Service } from "../types/helper.type";
+import { FooterRow, NavLink, Project, Service, Testimonial } from "../types/helper.type";
+import { EducationVisual, FinanceVisual, HealthcareVisual, LogisticsVisual, MobilityVisual, RetailVisual, SaasVisual, TravelVisual } from "@/components/ui/icons";
 
 export const common_texts = {
   App_Name: "9x Solutions",
-  App_title: "9X Solutions | Innovative Software & Digital Solutions",
+  App_title: "9X Solutions | Turning ideas into digital solutions.",
   App_description:
     "9X Solutions is a software development company dedicated to helping businesses grow through innovative technology. We build modern websites, custom software, business management systems, and digital solutions that simplify operations, strengthen brands, and drive business growth.",
   App_slogan: "Helping Businesses to Grow",
@@ -49,6 +50,7 @@ export const footerRows: FooterRow[] = [
   {
     title: "Capabilities",
     links: [
+      { label: "AI Solutions", href: "/ai-business-solutions" },
       { label: "Services", href: "/our-services" },
       { label: "Technology", href: "/technologies-we-use" },
     ],
@@ -56,22 +58,22 @@ export const footerRows: FooterRow[] = [
   {
     title: "Company",
     links: [
-      { label: "About us", href: "/company/about" },
-      { label: "Expertise", href: "/company/expertise" },
-      { label: "Careers", href: "/company/careers" },
+      { label: "About us", href: "/our-story" },
+      { label: "Our Works", href: "/work-we-have-done" },
+      // { label: "Careers", href: "/company/careers" },
     ],
   },
   {
     title: "Resources",
-    links: [{ label: "Contact us", href: "/resources/contact" }],
+    links: [{ label: "Contact us", href: "/talk-to-us" }],
   },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy policy", href: "/legal/privacy" },
-      { label: "Terms and conditions", href: "/legal/terms" },
-    ],
-  },
+  // {
+  //   title: "Legal",
+  //   links: [
+  //     { label: "Privacy policy", href: "/legal/privacy-policy" },
+  //     { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
+  //   ],
+  // },
 ];
 
 export const NAV_LINKS: NavLink[] = [
@@ -1046,5 +1048,231 @@ export const PRINCIPLES = [
   {
     title: "Build it to last",
     text: "Clean architecture, documentation, and handover so the product keeps working long after launch.",
+  },
+];
+
+export const allowedInterests = [
+  "Software development",
+  "Cloud and DevOps",
+  "Automation",
+  "AI solutions",
+  "Not sure yet",
+];
+
+// const interests = [
+//   "Software development",
+//   "Cloud and DevOps",
+//   "Automation",
+//   "AI solutions",
+//   "Not sure yet",
+// ];
+
+export const fieldClass =
+  "mt-2 w-full rounded-2xl border border-slate-200 bg-white px-5 py-3.5 text-[16px] text-slate-900 placeholder:text-slate-400 transition-colors focus:border-[#4F66FF] focus:outline-none focus:ring-4 focus:ring-[#4F66FF]/15";
+export const labelClass = "block text-[14px] font-medium text-slate-700";
+
+export const careers_roles = [
+  {
+    title: "Full-Stack Engineer",
+    team: "Engineering",
+    type: "Full-time",
+    location: "Sri Lanka",
+    body: "Build web products end to end with Next.js, TypeScript, and Node.js, from database design to polished interfaces.",
+  },
+  {
+    title: "UI/UX Designer",
+    team: "Design",
+    type: "Full-time",
+    location: "Sri Lanka",
+    body: "Turn client ideas into clear, beautiful interfaces, and work closely with engineers to see them shipped.",
+  },
+  {
+    title: "AI / ML Engineer",
+    team: "AI",
+    type: "Full-time",
+    location: "Sri Lanka",
+    body: "Design and deploy practical AI solutions, from LLM-powered assistants to data pipelines, that clients rely on.",
+  },
+  {
+    title: "Software Engineering Intern",
+    team: "Engineering",
+    type: "Internship",
+    location: "Sri Lanka",
+    body: "Learn on real client projects alongside senior engineers, with mentoring and a path to a full-time role.",
+  },
+];
+
+export const careers_perks = [
+  {
+    title: "Real work from day one",
+    body: "You will ship to real clients early, not sit on the sidelines. Small teams mean big ownership.",
+  },
+  {
+    title: "Grow fast",
+    body: "Mentoring, code reviews, and time to learn new tools, so your skills keep compounding.",
+  },
+  {
+    title: "Honest, direct culture",
+    body: "Clear communication, early warnings, and no politics. We say what we think and listen to your ideas.",
+  },
+  {
+    title: "Modern tools and stack",
+    body: "Next.js, TypeScript, cloud, and AI. We pick the right tools for the job, not the oldest ones.",
+  },
+  {
+    title: "Work that matters",
+    body: "We build software that helps businesses run better, and you will see the impact of what you make.",
+  },
+  {
+    title: "Flexible and fair",
+    body: "We care about outcomes, not hours at a desk. Ask us about working arrangements for each role.",
+  },
+];
+
+export const careers_steps = [
+  {
+    title: "Apply",
+    body: "Send your CV and a short note, or a link to your work. No cover letter essays needed.",
+  },
+  {
+    title: "Intro chat",
+    body: "A relaxed conversation about you, what you want to do next, and what we are building.",
+  },
+  {
+    title: "Skills conversation",
+    body: "A practical session on real problems. We care about how you think, not trick questions.",
+  },
+  {
+    title: "Offer",
+    body: "If it is a fit on both sides, we move quickly and keep you informed at every step.",
+  },
+];
+
+export const careers_faqs = [
+  {
+    q: "I don't see a role that fits. Can I still apply?",
+    a: "Yes. Send us your CV and tell us what you would like to work on. We keep an eye out for strong people even when we are not hiring for a specific role.",
+  },
+  {
+    q: "Do I need a degree?",
+    a: "Not necessarily. We look at what you can do and how you work. Projects, experience, and curiosity count for a lot.",
+  },
+  {
+    q: "How long does the process take?",
+    a: "We aim to keep it short and will tell you what to expect at each stage. You will always hear back from us.",
+  },
+  {
+    q: "Do you hire interns or fresh graduates?",
+    a: "Yes. When we have internship or junior openings they appear above. You can also send us an open application.",
+  },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote:
+      "The team understood our requirements and transformed our ideas into a practical digital solution. The overall experience was smooth, and the final product gave us a much better way to manage our business.",
+    name: "Business Representative",
+    role: "Business Owner",
+    company: "AGAPE GEAR",
+  },
+  {
+    quote:
+      "We appreciated the team's approach to understanding our workflow and building a solution around our actual business needs. Their attention to detail and willingness to improve made the development process valuable.",
+    name: "Project Representative",
+    role: "Project Coordinator",
+    company: "PPLC",
+  },
+  {
+    quote:
+      "Having a dedicated digital platform makes it easier to present our services and connect with potential customers. The development process focused on creating a professional and user-friendly experience.",
+    name: "Business Representative",
+    role: "Business Representative",
+    company: "Lanka Lagoon Tours",
+  },
+  {
+    quote:
+      "The platform provides a more organised approach to handling our internal processes. We value the effort put into building a solution that can support our operational requirements.",
+    name: "Project Representative",
+    role: "HR Representative",
+    company: "SLM HR Portal",
+  },
+];
+
+export const panel =
+  "w-[88%] max-w-sm rounded-xl border border-slate-200 bg-white p-4 text-slate-900 shadow-sm";
+export const track = "bg-slate-100";
+
+export const INDUSTRIES: {
+  name: string;
+  text: string;
+  tags: string[];
+  Visual: () => React.ReactElement;
+}[] = [
+  {
+    name: "Education",
+    text: "Learning platforms, portals, and student tools that keep learners engaged.",
+    tags: ["Learning platforms", "Student portals", "Progress tracking"],
+    Visual: EducationVisual,
+  },
+  {
+    name: "Mobility & energy",
+    text: "Fleet, charging, and live monitoring dashboards.",
+    tags: ["Live dashboards", "IoT feeds", "Fleet tools"],
+    Visual: MobilityVisual,
+  },
+  {
+    name: "Travel & hospitality",
+    text: "Booking sites, itineraries, and payments.",
+    tags: ["Booking engines", "Itineraries", "Payments"],
+    Visual: TravelVisual,
+  },
+  {
+    name: "Retail & e-commerce",
+    text: "Storefronts, catalogs, and order automation.",
+    tags: ["Storefronts", "Catalogs", "Order flows"],
+    Visual: RetailVisual,
+  },
+  {
+    name: "Logistics",
+    text: "Tracking, routing, and operations tooling.",
+    tags: ["Tracking", "Routing", "Ops tools"],
+    Visual: LogisticsVisual,
+  },
+  {
+    name: "Finance",
+    text: "Secure internal tools, reporting, and workflows.",
+    tags: ["Reporting", "Workflows", "Secure access"],
+    Visual: FinanceVisual,
+  },
+  {
+    name: "Healthcare",
+    text: "Scheduling, records access, and patient portals.",
+    tags: ["Scheduling", "Patient portals", "Records"],
+    Visual: HealthcareVisual,
+  },
+  {
+    name: "SaaS & startups",
+    text: "From MVP to a product that holds up at scale.",
+    tags: ["MVP build", "Subscriptions", "Scaling"],
+    Visual: SaasVisual,
+  },
+];
+
+export const How_We_Work_STEPS = [
+  {
+    title: "Discover",
+    text: "We learn your business, users, and goals, then agree on what success looks like.",
+  },
+  {
+    title: "Design",
+    text: "Flows, interfaces, and architecture are mapped out and reviewed before code is written.",
+  },
+  {
+    title: "Build",
+    text: "Short iterations with working software every step, so you can steer early.",
+  },
+  {
+    title: "Launch & grow",
+    text: "We ship, monitor, and keep improving, with room to scale as you do.",
   },
 ];

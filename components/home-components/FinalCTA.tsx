@@ -43,7 +43,7 @@ export default function FinalCTA() {
             </svg>
           </Link>
           <Link
-            href="/services"
+            href="/our-services"
             className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-4 text-[15px] font-semibold text-[#12141A] transition-colors hover:bg-slate-50"
           >
             Explore services

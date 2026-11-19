@@ -1,5 +1,6 @@
 import { common_texts, PILLARS } from "@/lib/constants/helper-constants";
 import Navbar from "./Navbar";
+import { ArrowUpRight } from "./ui/icons";
 
 export default function Header() {
   return (
@@ -41,7 +42,6 @@ export default function Header() {
 
       {/* Content — edge to edge */}
       <div className="relative z-10 w-full px-6 pt-40 md:px-12 md:pt-36 xl:px-20 mt-4">
-       
         <h1 className="w-full text-[clamp(2.6rem,8.2vw,9.5rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-white">
           Smart software.
           <br />
@@ -55,8 +55,8 @@ export default function Header() {
         {/* Description + CTAs spread across the full width */}
         <div className="mt-10 grid w-full items-end gap-8 md:mt-14 md:grid-cols-[1fr_auto] md:gap-16">
           <p className="max-w-2xl text-[17px] leading-relaxed text-slate-300 md:text-[20px]">
-            {common_texts.App_Name} builds scalable software with cloud, automation, and AI —
-            from idea to launch and beyond.
+            {common_texts.App_Name} builds scalable software with cloud,
+            automation, and AI — from idea to launch and beyond.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -65,24 +65,12 @@ export default function Header() {
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff0000] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(255,0,0,0.35)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_40px_rgba(255,0,0,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FA0FF]"
             >
               Book a Consultation
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              >
-                <path
-                  d="M3 8h10M9 4l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#ff0000] transition-transform duration-300 group-hover:rotate-45">
+                <ArrowUpRight className="scale-125" />
+              </span>
             </a>
             <a
-              href="#work"
+              href="/work-we-have-done"
               className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-[15px] font-semibold text-white backdrop-blur transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
             >
               View our work

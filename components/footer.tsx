@@ -6,6 +6,10 @@ import Link from "next/link";
 import { ArrowUpRight } from "./ui/icons";
 
 export default function Footer() {
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     // White page gutter → one big rounded navy card. Bold shift from flat bands.
     <footer className="w-full bg-white p-3 md:p-5">
@@ -91,6 +95,7 @@ export default function Footer() {
             </p>
             <a
               href="#"
+              onClick={scrollToTop}
               className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 py-1.5 pl-4 pr-1.5 text-sm text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
             >
               Back to top

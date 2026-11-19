@@ -148,7 +148,7 @@ export default function Services() {
         {/* View All Services */}
         <div className="mt-10 flex w-full justify-center sm:mt-12">
           <Link
-            href="/services"
+            href="/our-services"
             className="group inline-flex items-center justify-center gap-2 rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
           >
             View all services

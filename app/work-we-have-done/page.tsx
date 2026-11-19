@@ -136,7 +136,9 @@ export default function WorkWeHaveDone() {
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff0000] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(255,0,0,0.35)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_40px_rgba(255,0,0,0.55)]"
               >
                 See the projects
-                <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#ff0000] transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="scale-125" />
+                </span>
               </a>
               <Link
                 href="/talk-to-us"

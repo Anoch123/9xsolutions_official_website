@@ -1,8 +1,22 @@
 "use client";
+
 import Footer from "@/components/footer";
 import Navbar from "@/components/Navbar";
-import { Arrow, Eyebrow, Icon } from "@/components/ui/icons";
-import { AI_benefits, AI_capabilities, AI_engagements, AI_industries, AI_principles, AI_problems, AI_Solutions_faqs, AI_steps, AI_useCases, h2Class, sectionClass, SERVICES } from "@/lib/constants/helper-constants";
+import { Arrow, ArrowUpRight, Eyebrow, Glow, HoverGlow, Icon, Numeral, Pill } from "@/components/ui/icons";
+import {
+  AI_benefits,
+  AI_capabilities,
+  AI_engagements,
+  AI_industries,
+  AI_principles,
+  AI_problems,
+  AI_Solutions_faqs,
+  AI_steps,
+  AI_useCases,
+  h2Class,
+  sectionClass,
+  SERVICES,
+} from "@/lib/constants/helper-constants";
 import Link from "next/link";
 
 const slug = (s: string) =>
@@ -10,6 +24,9 @@ const slug = (s: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+
+const tinyLabel =
+  "text-[12px] font-medium uppercase tracking-[0.2em] text-slate-500";
 
 export default function AIBusinessSolutions() {
   return (
@@ -54,13 +71,15 @@ export default function AIBusinessSolutions() {
               sharpen decisions, and help your business serve customers faster,
               from first pilot to full rollout.
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 href="/talk-to-us"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff0000] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(255,0,0,0.35)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_40px_rgba(255,0,0,0.55)]"
+                className="group inline-flex items-center gap-4 rounded-full bg-[#ff0000] py-2 pl-8 pr-2 text-[16px] font-semibold text-white shadow-[0_10px_40px_rgba(255,0,0,0.4)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_50px_rgba(255,0,0,0.6)]"
               >
                 Book a Consultation
-                <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#ff0000] transition-transform duration-300 group-hover:rotate-45">
+                  <ArrowUpRight className="scale-125" />
+                </span>
               </Link>
               <a
                 href="#how-ai-helps"
@@ -71,21 +90,7 @@ export default function AIBusinessSolutions() {
             </div>
           </div>
 
-          {/* Jump chips */}
-          <div className="mt-12 flex w-full flex-wrap gap-2.5 border-t border-white/10 pt-8">
-            {SERVICES.map((s, i) => (
-              <a
-                key={s.label}
-                href={`#${slug(s.label)}`}
-                className="group inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-2 pl-3 pr-4 text-[14px] font-medium text-slate-200 transition-colors hover:border-[#ff0000]/60 hover:bg-white/10 hover:text-white"
-              >
-                <span className="font-mono text-[11px] text-[#ff6b6b]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {s.label}
-              </a>
-            ))}
-          </div>
+          
         </div>
       </header>
 
@@ -93,7 +98,10 @@ export default function AIBusinessSolutions() {
       <section className={sectionClass}>
         <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-20">
           <h2 className="text-[clamp(1.9rem,3.6vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-slate-900">
-            AI that does real work, not demos.
+            AI that does real work,{" "}
+            <span className="bg-gradient-to-r from-[#4F66FF] to-[#ff0000] bg-clip-text text-transparent">
+              not demos.
+            </span>
           </h2>
           <div className="space-y-6 text-[17px] leading-relaxed text-slate-600 md:text-[19px]">
             <p>
@@ -119,16 +127,23 @@ export default function AIBusinessSolutions() {
         <Eyebrow>How AI helps your business</Eyebrow>
         <h2 className={h2Class}>Six ways AI pays for itself.</h2>
 
-        <div className="mt-12 grid gap-x-10 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
-          {AI_benefits.map((b) => (
-            <div key={b.title} className="border-t-2 border-slate-900 pt-6">
-              <h3 className="text-[21px] font-semibold tracking-[-0.02em] text-slate-900">
-                {b.title}
-              </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
-                {b.body}
-              </p>
-            </div>
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {AI_benefits.map((b, i) => (
+            <article
+              key={b.title}
+              className="group relative overflow-hidden rounded-[32px] border border-slate-200 bg-slate-50 p-8 transition-all duration-500 hover:-translate-y-1 hover:border-transparent hover:bg-[#0B1020] hover:shadow-[0_30px_60px_rgba(11,16,32,0.25)] md:p-10"
+            >
+              <HoverGlow />
+              <div className="relative">
+                <Numeral n={i + 1} className="text-[clamp(3.5rem,6vw,5.5rem)]" />
+                <h3 className="mt-8 text-[22px] font-semibold tracking-[-0.02em] text-slate-900 transition-colors duration-500 group-hover:text-white">
+                  {b.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-slate-600 transition-colors duration-500 group-hover:text-slate-300">
+                  {b.body}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
@@ -138,22 +153,44 @@ export default function AIBusinessSolutions() {
         <Eyebrow>Problems we solve</Eyebrow>
         <h2 className={h2Class}>From daily friction to automatic.</h2>
 
-        <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200">
-          <div className="hidden grid-cols-2 border-b border-slate-200 bg-slate-50 px-8 py-4 text-[14px] font-semibold text-slate-500 md:grid">
-            <span>Today</span>
-            <span>With AI</span>
+        <div className="mt-12 space-y-4">
+          <div className="hidden grid-cols-[1fr_auto_1fr] gap-4 px-3 md:grid">
+            <span className={tinyLabel}>Today</span>
+            <span className="w-12" aria-hidden="true" />
+            <span className={tinyLabel}>With AI</span>
           </div>
+
           {AI_problems.map((p) => (
             <div
               key={p.problem}
-              className="grid gap-3 border-b border-slate-200 px-8 py-7 last:border-b-0 md:grid-cols-2 md:gap-10"
+              className="grid items-stretch gap-3 md:grid-cols-[1fr_auto_1fr] md:gap-4"
             >
-              <p className="text-[16px] leading-relaxed text-slate-500">
-                {p.problem}
-              </p>
-              <p className="text-[16px] font-medium leading-relaxed text-slate-900">
-                {p.solution}
-              </p>
+              <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-7 md:p-8">
+                <p className={`${tinyLabel} mb-3 md:hidden`}>Today</p>
+                <p className="text-[16px] leading-relaxed text-slate-500">
+                  {p.problem}
+                </p>
+              </div>
+
+              <div className="flex items-center justify-center">
+                <span className="flex h-12 w-12 rotate-90 items-center justify-center rounded-full bg-[#ff0000] text-white shadow-[0_10px_30px_rgba(255,0,0,0.35)] md:rotate-0">
+                  <Arrow />
+                </span>
+              </div>
+
+              <div className="relative overflow-hidden rounded-[28px] bg-[#0B1020] p-7 text-white md:p-8">
+                <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_100%_100%,rgba(79,102,255,0.25),transparent_65%)]" />
+                </div>
+                <div className="relative">
+                  <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.2em] text-[#8FA0FF] md:hidden">
+                    With AI
+                  </p>
+                  <p className="text-[16px] font-medium leading-relaxed">
+                    {p.solution}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -171,28 +208,31 @@ export default function AIBusinessSolutions() {
           {AI_capabilities.map((c) => (
             <article
               key={c.title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:border-[#4F66FF]/40 hover:bg-white hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
+              className="group relative flex flex-col overflow-hidden rounded-[32px] border border-slate-200 bg-slate-50 p-8 transition-all duration-500 hover:-translate-y-1 hover:border-transparent hover:bg-[#0B1020] hover:shadow-[0_30px_60px_rgba(11,16,32,0.25)] md:p-10"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B1020] text-[#8FA0FF]">
-                <Icon d={c.icon} />
+              <HoverGlow />
+              <div className="relative flex flex-1 flex-col">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0B1020] text-[#8FA0FF] transition-all duration-500 group-hover:rotate-6 group-hover:bg-[#ff0000] group-hover:text-white">
+                  <Icon d={c.icon} />
+                </div>
+                <h3 className="mt-8 text-[23px] font-semibold tracking-[-0.02em] text-slate-900 transition-colors duration-500 group-hover:text-white">
+                  {c.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-slate-600 transition-colors duration-500 group-hover:text-slate-300">
+                  {c.body}
+                </p>
+                <ul className="mt-6 space-y-2.5 border-t border-slate-200 pt-6 text-[14px] text-slate-700 transition-colors duration-500 group-hover:border-white/10 group-hover:text-slate-300">
+                  {c.points.map((p) => (
+                    <li key={p} className="flex items-start gap-3">
+                      <span
+                        className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff0000]"
+                        aria-hidden="true"
+                      />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="mt-6 text-[22px] font-semibold tracking-[-0.02em] text-slate-900">
-                {c.title}
-              </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
-                {c.body}
-              </p>
-              <ul className="mt-6 space-y-2 border-t border-slate-200 pt-6 text-[14px] text-slate-700">
-                {c.points.map((p) => (
-                  <li key={p} className="flex items-start gap-3">
-                    <span
-                      className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff0000]"
-                      aria-hidden="true"
-                    />
-                    {p}
-                  </li>
-                ))}
-              </ul>
             </article>
           ))}
         </div>
@@ -203,13 +243,21 @@ export default function AIBusinessSolutions() {
         <Eyebrow>Industries</Eyebrow>
         <h2 className={h2Class}>Built for the way your industry works.</h2>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-slate-200 bg-slate-200 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {AI_industries.map((i) => (
-            <div key={i.name} className="bg-white p-8">
-              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-slate-900">
-                {i.name}
-              </h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-slate-600">
+            <div
+              key={i.name}
+              className="group relative rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#4F66FF]/40 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-slate-900">
+                  {i.name}
+                </h3>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-500 transition-all duration-300 group-hover:rotate-45 group-hover:border-transparent group-hover:bg-[#ff0000] group-hover:text-white">
+                  <ArrowUpRight />
+                </span>
+              </div>
+              <p className="mt-3 text-[15px] leading-relaxed text-slate-600">
                 {i.example}
               </p>
             </div>
@@ -231,16 +279,22 @@ export default function AIBusinessSolutions() {
             </p>
           </div>
 
-          <ul className="divide-y divide-slate-200 border-y border-slate-200">
-            {AI_useCases.map((u) => (
+          <ul className="flex flex-col gap-3">
+            {AI_useCases.map((u, i) => (
               <li
                 key={u.team}
-                className="grid gap-2 py-8 md:grid-cols-[200px_1fr] md:gap-10"
+                className="group grid items-center gap-3 rounded-3xl border border-slate-200 bg-slate-50 p-6 transition-all duration-300 hover:border-transparent hover:bg-[#0B1020] md:grid-cols-[56px_200px_1fr] md:gap-8 md:p-8"
               >
-                <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-slate-900">
+                <span
+                  aria-hidden="true"
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0B1020] text-[13px] font-semibold text-[#8FA0FF] transition-colors duration-300 group-hover:bg-[#ff0000] group-hover:text-white"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-slate-900 transition-colors duration-300 group-hover:text-white">
                   {u.team}
                 </h3>
-                <p className="text-[16px] leading-relaxed text-slate-600">
+                <p className="text-[16px] leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-300">
                   {u.outcome}
                 </p>
               </li>
@@ -249,28 +303,49 @@ export default function AIBusinessSolutions() {
         </div>
       </section>
 
-      {/* Process (dark band for contrast) */}
-      <section className="w-full bg-[#0B1020] px-6 py-20 md:px-12 md:py-28 xl:px-20">
-        <Eyebrow dark>How we work</Eyebrow>
-        <h2 className="mt-6 max-w-3xl text-[clamp(1.9rem,3.6vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
-          From idea to production in four steps.
-        </h2>
+      {/* Process: big navy card, same language as the footer */}
+      <section className="w-full bg-white p-3 md:p-5">
+        <div className="relative overflow-hidden rounded-[32px] bg-[#0B1020] px-6 py-16 text-white md:rounded-[48px] md:px-12 md:py-24 xl:px-20">
+          <Glow />
 
-        <ol className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 md:grid-cols-2 xl:grid-cols-4">
-          {AI_steps.map((s, i) => (
-            <li key={s.title} className="bg-[#0B1020] p-8">
-              <span className="bg-gradient-to-r from-[#8FA0FF] to-[#ff6b6b] bg-clip-text text-[40px] font-semibold leading-none tracking-[-0.04em] text-transparent">
-                {i + 1}
+          <div className="relative">
+            <Pill>How we work</Pill>
+            <h2 className="mt-7 max-w-4xl text-[clamp(2.2rem,4.8vw,4.8rem)] font-semibold leading-[1] tracking-[-0.04em]">
+              From idea to production
+              <br />
+              <span className="bg-gradient-to-r from-[#8FA0FF] via-white to-[#ff6b6b] bg-clip-text text-transparent">
+                in four steps.
               </span>
-              <h3 className="mt-6 text-[20px] font-semibold tracking-[-0.02em] text-white">
-                {s.title}
-              </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-slate-400">
-                {s.body}
-              </p>
-            </li>
-          ))}
-        </ol>
+            </h2>
+
+            <ol className="relative mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {AI_steps.map((s, i) => (
+                <li
+                  key={s.title}
+                  className="group relative rounded-3xl border border-white/10 bg-white/5 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08]"
+                >
+                  <span className="block bg-gradient-to-b from-white/70 to-white/5 bg-clip-text text-[clamp(3.5rem,5vw,4.5rem)] font-semibold leading-[0.85] tracking-[-0.06em] text-transparent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-8 text-[20px] font-semibold tracking-[-0.02em] text-white">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-slate-400">
+                    {s.body}
+                  </p>
+                  {i < AI_steps.length - 1 && (
+                    <span
+                      className="absolute -bottom-3 left-1/2 z-10 flex h-6 w-6 -translate-x-1/2 rotate-90 items-center justify-center rounded-full bg-[#ff0000] text-white md:hidden"
+                      aria-hidden="true"
+                    >
+                      <Arrow className="scale-75" />
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </section>
 
       {/* Engagement options */}
@@ -279,20 +354,24 @@ export default function AIBusinessSolutions() {
         <h2 className={h2Class}>Start small or go all in.</h2>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {AI_engagements.map((e) => (
+          {AI_engagements.map((e, i) => (
             <div
               key={e.name}
-              className="flex flex-col rounded-3xl border border-slate-200 p-8"
+              className="group relative flex flex-col overflow-hidden rounded-[32px] border border-slate-200 bg-slate-50 p-8 transition-all duration-500 hover:-translate-y-1 hover:border-transparent hover:bg-[#0B1020] hover:shadow-[0_30px_60px_rgba(11,16,32,0.25)]"
             >
-              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-slate-900">
-                {e.name}
-              </h3>
-              <p className="mt-3 flex-1 text-[15px] leading-relaxed text-slate-600">
-                {e.body}
-              </p>
-              <p className="mt-6 border-t border-slate-200 pt-4 text-[14px] font-medium text-[#4F66FF]">
-                {e.for}
-              </p>
+              <HoverGlow />
+              <div className="relative flex flex-1 flex-col">
+                <Numeral n={i + 1} className="text-[clamp(3rem,4.5vw,4rem)]" />
+                <h3 className="mt-8 text-[21px] font-semibold tracking-[-0.02em] text-slate-900 transition-colors duration-500 group-hover:text-white">
+                  {e.name}
+                </h3>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-slate-600 transition-colors duration-500 group-hover:text-slate-300">
+                  {e.body}
+                </p>
+                <p className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-[13px] font-medium text-[#4F66FF] transition-all duration-500 group-hover:border-white/10 group-hover:bg-white/5 group-hover:text-[#8FA0FF]">
+                  {e.for}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -303,15 +382,34 @@ export default function AIBusinessSolutions() {
         <Eyebrow>Built to be trusted</Eyebrow>
         <h2 className={h2Class}>Responsible by design.</h2>
 
-        <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
           {AI_principles.map((p) => (
-            <div key={p.title} className="border-l-2 border-[#ff0000]/70 pl-6">
-              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-slate-900">
-                {p.title}
-              </h3>
-              <p className="mt-2 max-w-lg text-[15px] leading-relaxed text-slate-600">
-                {p.body}
-              </p>
+            <div
+              key={p.title}
+              className="flex gap-5 rounded-3xl border border-slate-200 bg-white p-8 transition-all duration-300 hover:border-[#4F66FF]/40 hover:shadow-[0_20px_50px_rgba(15,23,42,0.08)]"
+            >
+              <span
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0B1020] text-[#8FA0FF]"
+                aria-hidden="true"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12.5l4.5 4.5L19 7.5"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              <div>
+                <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-slate-900">
+                  {p.title}
+                </h3>
+                <p className="mt-2 max-w-lg text-[15px] leading-relaxed text-slate-600">
+                  {p.body}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -320,26 +418,29 @@ export default function AIBusinessSolutions() {
       {/* FAQ */}
       <section className={`${sectionClass} !pt-0`}>
         <div className="grid gap-12 md:grid-cols-[1fr_1.5fr] md:gap-20">
-          <div>
+          <div className="md:sticky md:top-28 md:self-start">
             <Eyebrow>Questions</Eyebrow>
             <h2 className="mt-6 text-[clamp(1.9rem,3.6vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-slate-900">
               Before you get started.
             </h2>
           </div>
 
-          <div className="divide-y divide-slate-200 border-y border-slate-200">
+          <div className="flex flex-col gap-3">
             {AI_Solutions_faqs.map((f) => (
-              <details key={f.q} className="group py-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-[18px] font-semibold tracking-[-0.01em] text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F66FF] [&::-webkit-details-marker]:hidden">
+              <details
+                key={f.q}
+                className="group rounded-3xl border border-slate-200 bg-slate-50 px-6 py-5 transition-colors duration-300 open:border-transparent open:bg-[#0B1020] md:px-8 md:py-6"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-[18px] font-semibold tracking-[-0.01em] text-slate-900 transition-colors group-open:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4F66FF] [&::-webkit-details-marker]:hidden">
                   {f.q}
                   <span
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-slate-300 text-slate-600 transition-transform duration-300 group-open:rotate-45"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-white text-[20px] leading-none text-slate-600 transition-all duration-300 group-hover:border-[#4F66FF]/50 group-open:rotate-45 group-open:border-transparent group-open:bg-[#ff0000] group-open:text-white"
                     aria-hidden="true"
                   >
                     +
                   </span>
                 </summary>
-                <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-slate-600">
+                <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-slate-600 group-open:text-slate-300">
                   {f.a}
                 </p>
               </details>
@@ -347,35 +448,6 @@ export default function AIBusinessSolutions() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      {/* <section className="w-full bg-white px-6 pb-20 md:px-12 md:pb-28 xl:px-20">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#0B1020] px-8 py-16 md:px-16 md:py-24">
-          <div className="absolute inset-0" aria-hidden="true">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_20%_0%,rgba(79,102,255,0.28),transparent_65%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_100%,rgba(255,0,0,0.16),transparent_70%)]" />
-          </div>
-
-          <div className="relative grid items-end gap-10 md:grid-cols-[1fr_auto] md:gap-16">
-            <div>
-              <h2 className="max-w-3xl text-[clamp(2rem,4.6vw,4.2rem)] font-semibold leading-[1.02] tracking-[-0.035em] text-white">
-                Tell us what slows your business down.
-              </h2>
-              <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-slate-300">
-                In a 30-minute consultation we will identify where AI can help
-                most and outline a first project.
-              </p>
-            </div>
-            <Link
-              href="/talk-to-us"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff0000] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_10px_30px_rgba(255,0,0,0.35)] transition-all duration-300 hover:bg-[#e60000] hover:shadow-[0_10px_40px_rgba(255,0,0,0.55)]"
-            >
-              Book a Consultation
-              <Arrow className="transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </div>
-      </section> */}
 
       <Footer />
     </main>
