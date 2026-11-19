@@ -16,6 +16,7 @@ import {
   SaasVisual,
   TravelVisual,
 } from "@/components/ui/icons";
+import { LegalSection } from "@/components/legal-layout";
 
 export const common_texts = {
   App_Name: "9x Solutions",
@@ -492,20 +493,16 @@ export const footerRows: FooterRow[] = [
     links: [
       { label: "About us", href: "/our-story" },
       { label: "Our Works", href: "/work-we-have-done" },
-      // { label: "Careers", href: "/company/careers" },
+      {label: "Contact us", href: "/talk-to-us" },
     ],
   },
   {
-    title: "Resources",
-    links: [{ label: "Contact us", href: "/talk-to-us" }],
+    title: "Legal",
+    links: [
+      { label: "Privacy policy", href: "/legal/privacy-policy" },
+      { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
+    ],
   },
-  // {
-  //   title: "Legal",
-  //   links: [
-  //     { label: "Privacy policy", href: "/legal/privacy-policy" },
-  //     { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
-  //   ],
-  // },
 ];
 
 export const NAV_LINKS: NavLink[] = [
@@ -1714,5 +1711,212 @@ export const How_We_Work_STEPS = [
   {
     title: "Launch & grow",
     text: "We ship, monitor, and keep improving, with room to scale as you do.",
+  },
+];
+
+
+export const privacy_policy_sections: LegalSection[] = [
+  {
+    id: "who-we-are",
+    title: "Who we are",
+    body: [
+      `${common_texts.Company_name} is a software company based in Sri Lanka. This policy explains what personal information we collect through our website, how we use it, and the choices you have.`,
+      "For privacy questions, you can reach us at the email address at the bottom of this page.",
+    ],
+  },
+  {
+    id: "collect",
+    title: "What we collect",
+    body: [
+      "Information you give us when you use the contact form:",
+      [
+        "Your name, work email address, and phone number",
+        "Your company name, if you choose to give it",
+        "The services you are interested in",
+        "The message you write about your project",
+      ],
+      // "Information collected automatically when you visit the site: basic technical data such as IP address, browser type, device, pages viewed, and the time of the visit. This is typically recorded in server and hosting logs.",
+    ],
+  },
+  {
+    id: "use",
+    title: "How we use it",
+    body: [
+      "We use your information to:",
+      [
+        "Read and reply to your enquiry, and arrange a call if you want one",
+        "Send you a confirmation that your message was received",
+        "Keep the website secure, and detect spam and abuse",
+        "Understand how the site is used so we can improve it",
+      ],
+      "We do not use your enquiry details for unrelated marketing, and we do not sell your personal information.",
+    ],
+  },
+  {
+    id: "basis",
+    title: "Why we are allowed to",
+    body: [
+      "We process the details you send in a contact form because you ask us to respond, and so that we can take steps toward a possible project with you. We process technical data for our legitimate interest in running and protecting the website.",
+      "Where we rely on your consent, you can withdraw it at any time.",
+    ],
+  },
+  {
+    id: "sharing",
+    title: "Who we share it with",
+    body: [
+      "We share personal information only with the service providers that help us run the website and handle your enquiry, and only as needed:",
+      [
+        "Our email provider, which delivers your message to our team and sends your confirmation",
+        "Our hosting and infrastructure providers, which serve the website",
+      ],
+      "We may also disclose information if the law requires it, or to protect our rights, our users, or the security of the site.",
+    ],
+  },
+  {
+    id: "cookies",
+    title: "Cookies and tracking",
+    body: [
+      "This website does not use advertising or cross-site tracking cookies. Our hosting provider may use essential technical data to deliver and secure the site.",
+      "If we add analytics or other cookies in future, we will update this page and ask for consent where the law requires it.",
+    ],
+  },
+  {
+    id: "retention",
+    title: "How long we keep it",
+    body: [
+      "We keep enquiry details for as long as we need them to respond to you and manage any resulting relationship, and for a reasonable period afterwards in case of follow-up questions. After that, we delete or anonymize them.",
+      "If you become a client, the information we hold about the project is handled under your project agreement.",
+    ],
+  },
+  {
+    id: "security",
+    title: "How we protect it",
+    body: [
+      "We use reasonable technical and organizational measures to protect your information, including encrypted connections and limiting access to the people who need it. No online service can be completely secure, so we cannot guarantee absolute security.",
+    ],
+  },
+  {
+    id: "rights",
+    title: "Your rights",
+    body: [
+      "Under Sri Lanka's Personal Data Protection Act, and similar laws that may apply to you, you may have the right to:",
+      [
+        "Ask what personal data we hold about you and get a copy",
+        "Ask us to correct information that is wrong or incomplete",
+        "Ask us to delete your information, or restrict how we use it",
+        "Object to certain uses, or withdraw consent you previously gave",
+        "Complain to the relevant data protection authority",
+      ],
+      "To use any of these rights, email us. We may need to confirm your identity first, and we will respond within a reasonable time.",
+    ],
+  },
+  {
+    id: "transfers",
+    title: "International transfers",
+    body: [
+      "Some of our service providers may process data on servers outside Sri Lanka. Where that happens, we take steps to make sure your information stays protected in line with this policy and applicable law.",
+    ],
+  },
+  {
+    id: "children",
+    title: "Children",
+    body: [
+      "Our website and services are meant for businesses and adults. We do not knowingly collect personal information from children. If you believe a child has sent us their details, contact us and we will delete them.",
+    ],
+  },
+  {
+    id: "changes",
+    title: "Changes to this policy",
+    body: [
+      "We may update this policy as our website or the law changes. The date at the top shows the latest revision. For significant changes, we will make that clear on the site.",
+    ],
+  },
+];
+
+export const terms_and_conditions_sections: LegalSection[] = [
+  {
+    id: "acceptance",
+    title: "Acceptance of these terms",
+    body: [
+      `By accessing or using the ${common_texts.Company_name} website, you agree to these Terms and Conditions. If you do not agree, please do not use the site.`,
+      "We may update these terms from time to time. The date at the top of this page shows when they were last changed, and continuing to use the site after a change means you accept the new version.",
+    ],
+  },
+  {
+    id: "about",
+    title: "About our website and services",
+    body: [
+      `This website provides information about the software, cloud, and AI services offered by ${common_texts.Company_name}. Content on the site is for general information and is not a binding offer.`,
+      "Any actual project work is governed by a separate written agreement, proposal, or statement of work. If that document conflicts with these terms, the signed agreement takes priority for that work.",
+    ],
+  },
+  {
+    id: "use",
+    title: "Using the website",
+    body: [
+      "You agree to use the site lawfully and in a way that does not harm it or other people. In particular, you must not:",
+      [
+        "Attempt to gain unauthorized access to the site, our servers, or any connected systems",
+        "Introduce malware, or interfere with the site's normal operation",
+        "Scrape, copy, or republish our content in bulk without written permission",
+        "Use the contact form to send spam, unlawful, or misleading content",
+        "Pretend to be another person or organization",
+      ],
+    ],
+  },
+  {
+    id: "enquiries",
+    title: "Enquiries and submissions",
+    body: [
+      "When you send us a message through the contact form, you confirm that the details you provide are accurate and that you have the right to share them.",
+      "Sending an enquiry does not create a client relationship or any obligation on either side. A project begins only once we both agree to terms in writing.",
+      "We handle your personal details as described in our Privacy Policy.",
+    ],
+  },
+  {
+    id: "ip",
+    title: "Intellectual property",
+    body: [
+      `The website, including its text, design, graphics, logos, and code, belongs to ${common_texts.Company_name} or its licensors and is protected by intellectual property laws.`,
+      "You may view and share links to the site for personal or internal business purposes. You may not copy, modify, or distribute our content or branding without our written permission.",
+      "Ownership of work delivered to clients is set out in the relevant project agreement.",
+    ],
+  },
+  {
+    id: "third-party",
+    title: "Third-party links and services",
+    body: [
+      "The site may link to or display content from third parties, such as technology logos or external websites. We do not control those sites or services and are not responsible for their content, availability, or practices.",
+    ],
+  },
+  {
+    id: "disclaimer",
+    title: "Disclaimers",
+    body: [
+      "We work to keep the site accurate and available, but it is provided on an \"as is\" and \"as available\" basis. We do not guarantee that it will always be error-free, secure, or uninterrupted.",
+      "Information on the site, including descriptions of technologies and example stacks, is general in nature and should not be treated as professional advice for your specific situation.",
+    ],
+  },
+  {
+    id: "liability",
+    title: "Limitation of liability",
+    body: [
+      `To the fullest extent permitted by law, ${common_texts.Company_name} will not be liable for any indirect, incidental, or consequential loss arising from your use of, or inability to use, the website.`,
+      "Nothing in these terms excludes liability that cannot be excluded under applicable law.",
+    ],
+  },
+  {
+    id: "changes",
+    title: "Changes to the site",
+    body: [
+      "We may change, suspend, or remove any part of the website at any time, and we may restrict access if we believe these terms have been broken.",
+    ],
+  },
+  {
+    id: "law",
+    title: "Governing law",
+    body: [
+      "These terms are governed by the laws of Sri Lanka. Any dispute that cannot be resolved informally will be subject to the exclusive jurisdiction of the courts of Sri Lanka.",
+    ],
   },
 ];

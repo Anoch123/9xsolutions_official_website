@@ -8,7 +8,7 @@ import { initials } from "@/lib/utils/common-functions";
 const navBtn =
   "flex h-14 w-14 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:border-transparent hover:bg-[#ff0000] hover:text-white hover:shadow-[0_10px_30px_rgba(255,0,0,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F66FF] active:scale-95";
 
-export default function Partners() {
+export default function Clients() {
   const scroller = useRef<HTMLUListElement>(null);
 
   const scrollByCard = (direction: 1 | -1) => {
@@ -29,22 +29,22 @@ export default function Partners() {
 
   return (
     <section
-      aria-labelledby="partners-heading"
+      aria-labelledby="clients-heading"
       className="w-full overflow-hidden bg-white px-6 py-14 md:px-12 md:py-14 xl:px-20"
     >
       <div className="w-full">
         {/* Heading + controls */}
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <header className="w-full max-w-4xl">
-            <Eyebrow>Partners</Eyebrow>
+            <Eyebrow>Our clients</Eyebrow>
 
             <h2
-              id="partners-heading"
+              id="clients-heading"
               className="mt-6 text-[clamp(1.9rem,3.6vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-slate-900"
             >
-              Trusted partnerships,{" "}
+              Trusted by the teams{" "}
               <span className="bg-gradient-to-r from-[#4F66FF] to-[#ff0000] bg-clip-text text-transparent">
-                successful collaborations.
+                we build for.
               </span>
             </h2>
 
