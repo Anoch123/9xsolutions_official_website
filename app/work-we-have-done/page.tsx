@@ -9,6 +9,9 @@ import Footer from "@/components/footer";
 import { Project } from "@/lib/types/helper.type";
 import { PRINCIPLES, PROJECTS } from "@/lib/constants/helper-constants";
 import { Arrow, ArrowUpRight, Check, DetailRow } from "@/components/ui/icons";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/work-we-have-done"];
 
 const host = (url: string) => new URL(url).host.replace(/^www\./, "");
 

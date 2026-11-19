@@ -2,6 +2,9 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/Navbar";
 import { Arrow, ArrowUpRight, Eyebrow } from "@/components/ui/icons";
 import Link from "next/link";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/our-story"];
 
 const h2Class =
   "mt-6 max-w-3xl text-[clamp(1.9rem,3.6vw,3.4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-slate-900";

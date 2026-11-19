@@ -1,4 +1,7 @@
 import LegalLayout, { LegalSection } from "@/components/legal-layout";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/legal/terms-and-conditions"];
 
 const COMPANY = "9X Solutions";
 const CONTACT_EMAIL = "hello@yourdomain.com"; // TODO: your real contact email

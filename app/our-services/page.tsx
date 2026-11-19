@@ -8,6 +8,9 @@ import FaqSection from "@/components/services-components/faqisection";
 import CTASection from "@/components/cta-section";
 import AllServices from "@/components/services-components/all-services";
 import Footer from "@/components/footer";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/our-services"];
 
 const slug = (s: string) =>
   s

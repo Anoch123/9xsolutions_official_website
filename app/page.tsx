@@ -6,6 +6,9 @@ import Industries from "@/components/home-components/Industries";
 import Partners from "@/components/home-components/Partners";
 import WhyUs from "@/components/home-components/WhyUs";
 import Services from "@/components/services-components/services";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/"];
 
 export default function Home() {
   return (

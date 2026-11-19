@@ -3,6 +3,9 @@ import Navbar from "@/components/Navbar";
 import { ArrowUpRight, Eyebrow, Glow, HoverGlow, Pill } from "@/components/ui/icons";
 import { careers_faqs, careers_perks, careers_roles, careers_steps, common_texts, h2Class, sectionClass } from "@/lib/constants/helper-constants";
 import Link from "next/link";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/company/careers"];
 
 const applyHref = (role?: string) =>
   `mailto:${common_texts.Company_email}?subject=${encodeURIComponent(

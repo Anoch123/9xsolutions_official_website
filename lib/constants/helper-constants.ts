@@ -1,6 +1,21 @@
 import { VisualKey } from "@/components/services-components/ServiceVisuals";
-import { FooterRow, NavLink, Project, Service, Testimonial } from "../types/helper.type";
-import { EducationVisual, FinanceVisual, HealthcareVisual, LogisticsVisual, MobilityVisual, RetailVisual, SaasVisual, TravelVisual } from "@/components/ui/icons";
+import {
+  FooterRow,
+  NavLink,
+  Project,
+  Service,
+  Testimonial,
+} from "../types/helper.type";
+import {
+  EducationVisual,
+  FinanceVisual,
+  HealthcareVisual,
+  LogisticsVisual,
+  MobilityVisual,
+  RetailVisual,
+  SaasVisual,
+  TravelVisual,
+} from "@/components/ui/icons";
 
 export const common_texts = {
   App_Name: "9x Solutions",
@@ -20,23 +35,61 @@ export const common_texts = {
   },
 
   SEO: {
-    title: "9X Solutions | Software Development & Digital Innovation",
+    title: "9X Solutions | Software Development Company in Sri Lanka",
     description:
-      "Transform your ideas into reality with 9X Solutions. We specialize in website development, custom software solutions, business management systems, and digital transformation.",
+      "Looking for a software development company in Sri Lanka? 9X Solutions builds custom software, professional websites, web applications, POS systems, business management platforms, and automation solutions.",
     keywords: [
       "9X Solutions",
-      "Software Development Company",
-      "Web Development Sri Lanka",
-      "Custom Software Development",
-      "Website Design",
-      "Business Management Systems",
-      "POS Systems",
-      "Digital Solutions",
+      "9X Solutions Sri Lanka",
+      "Software Development Company in Sri Lanka",
+      "Software Company Sri Lanka",
       "IT Solutions Sri Lanka",
-      "Software Solutions",
-      "AI Automation",
-      "Web Applications",
+      "Web Development Company Sri Lanka",
+      "Website Development Sri Lanka",
+      "Custom Software Development Sri Lanka",
+      "Web Application Development",
+      "Business Management Software",
+      "POS System Development Sri Lanka",
+      "Inventory Management Software",
+      "Custom Business Software",
+      "E-Commerce Website Development",
+      "Business Automation Solutions",
+      "Cloud and DevOps Services",
+      "AI Solutions Sri Lanka",
+      "Digital Transformation",
+      "Software Developers Sri Lanka",
+      "Maggona Software Development",
+      "Kalutara IT Solutions",
     ],
+    canonical: "https://9xsolutionsit.com",
+    locale: "en_LK",
+    language: "en",
+    author: "9X Solutions",
+    robots: "index, follow",
+    openGraph: {
+      type: "website",
+      siteName: "9X Solutions",
+      title: "9X Solutions | Software Development & IT Solutions",
+      description:
+        "We build custom software, websites, business management systems, and digital solutions that help businesses grow.",
+      url: "https://9xsolutionsit.com",
+      images: [
+        {
+          url: "https://9xsolutionsit.com/images/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: "9X Solutions - Software Development Company in Sri Lanka",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "9X Solutions | Software Development Sri Lanka",
+      description:
+        "Turning ideas into digital solutions. Custom software, websites, business systems, and IT solutions.",
+      images: ["https://9xsolutionsit.com/images/og-image.jpg"],
+    },
   },
 
   Footer: {
@@ -45,6 +98,385 @@ export const common_texts = {
       "Empowering businesses with innovative technology, creative digital solutions, and reliable software development services.",
   },
 };
+
+export type PageSEO = {
+  title: string;
+  description: string;
+  keywords: string[];
+  canonical: string;
+  openGraph: {
+    title: string;
+    description: string;
+    type: "website";
+    url: string;
+    images: Array<{ url: string; width: number; height: number; alt: string }>;
+  };
+  twitter: {
+    card: "summary_large_image";
+    title: string;
+    description: string;
+    images: string[];
+  };
+};
+
+const ogImage = {
+  url: "https://9xsolutionsit.com/images/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "9X Solutions - Software Development Company in Sri Lanka",
+};
+
+export const pageSEO: Record<string, PageSEO> = {
+  "/": {
+    title: common_texts.SEO.title,
+    description: common_texts.App_description,
+    keywords: common_texts.SEO.keywords,
+    canonical: common_texts.SEO.canonical,
+    openGraph: {
+      title: common_texts.SEO.openGraph.title,
+      description: common_texts.SEO.openGraph.description,
+      type: "website",
+      url: common_texts.Company_website,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: common_texts.SEO.twitter.title,
+      description: common_texts.SEO.twitter.description,
+      images: [ogImage.url],
+    },
+  },
+  "/our-services": {
+    title:
+      "Software Development Services | Custom Software, Web & AI Solutions - 9X Solutions",
+    description:
+      "Professional software development services in Sri Lanka. Custom software, web development, mobile apps, UI/UX design, cloud, DevOps, and AI solutions built around your business.",
+    keywords: [
+      "software development services Sri Lanka",
+      "custom software development",
+      "web development company Sri Lanka",
+      "mobile app development",
+      "UI/UX design services",
+      "cloud solutions Sri Lanka",
+      "DevOps services",
+      "AI solutions Sri Lanka",
+      "business management software",
+    ],
+    canonical: `${common_texts.Company_website}/our-services`,
+    openGraph: {
+      title:
+        "Software Development Services | Custom Software, Web & AI Solutions - 9X Solutions",
+      description:
+        "Professional software development services in Sri Lanka. Custom software, web development, mobile apps, UI/UX design, cloud, DevOps, and AI solutions built around your business.",
+      type: "website",
+      url: `${common_texts.Company_website}/our-services`,
+      images: [{ ...ogImage, alt: "9X Solutions Software Development Services" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        "Software Development Services | Custom Software, Web & AI Solutions - 9X Solutions",
+      description:
+        "Professional software development services in Sri Lanka. Custom software, web development, mobile apps, UI/UX design, cloud, DevOps, and AI solutions.",
+      images: [ogImage.url],
+    },
+  },
+  "/our-story": {
+    title: "Our Story | 9X Solutions - Software Company in Sri Lanka",
+    description:
+      "Learn about 9X Solutions, a Sri Lankan software development company. Our mission, values, and how we help businesses grow through reliable, practical technology.",
+    keywords: [
+      "about 9X Solutions",
+      "software company Sri Lanka",
+      "our story",
+      "business growth",
+      "software development company history",
+    ],
+    canonical: `${common_texts.Company_website}/our-story`,
+    openGraph: {
+      title: "Our Story | 9X Solutions - Software Company in Sri Lanka",
+      description:
+        "Learn about 9X Solutions, a Sri Lankan software development company. Our mission, values, and how we help businesses grow through technology.",
+      type: "website",
+      url: `${common_texts.Company_website}/our-story`,
+      images: [{ ...ogImage, alt: "9X Solutions Our Story" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Our Story | 9X Solutions - Software Company in Sri Lanka",
+      description:
+        "Learn about 9X Solutions, a Sri Lankan software development company.",
+      images: [ogImage.url],
+    },
+  },
+  "/work-we-have-done": {
+    title:
+      "Our Work | Software Development Projects & Case Studies - 9X Solutions",
+    description:
+      "See our latest software development projects and case studies. E-commerce, POS systems, web apps, and digital solutions built for real businesses in Sri Lanka.",
+    keywords: [
+      "software development projects Sri Lanka",
+      "case studies",
+      "e-commerce development",
+      "POS system development",
+      "web applications",
+      "our work",
+    ],
+    canonical: `${common_texts.Company_website}/work-we-have-done`,
+    openGraph: {
+      title:
+        "Our Work | Software Development Projects & Case Studies - 9X Solutions",
+      description:
+        "See our latest software development projects and case studies. E-commerce, POS systems, web apps, and digital solutions built for real businesses.",
+      type: "website",
+      url: `${common_texts.Company_website}/work-we-have-done`,
+      images: [{ ...ogImage, alt: "9X Solutions Our Work Portfolio" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        "Our Work | Software Development Projects - 9X Solutions",
+      description:
+        "See our latest software development projects and case studies built for real businesses.",
+      images: [ogImage.url],
+    },
+  },
+  "/ai-business-solutions": {
+    title:
+      "AI Business Solutions | AI Development & Automation Sri Lanka - 9X Solutions",
+    description:
+      "AI business solutions in Sri Lanka. AI agents, process automation, generative AI, predictive analytics, and document intelligence built for your business.",
+    keywords: [
+      "AI solutions Sri Lanka",
+      "AI business automation",
+      "generative AI",
+      "machine learning Sri Lanka",
+      "AI agents",
+      "predictive analytics",
+      "document intelligence",
+      "AI development company",
+    ],
+    canonical: `${common_texts.Company_website}/ai-business-solutions`,
+    openGraph: {
+      title:
+        "AI Business Solutions | AI Development & Automation Sri Lanka - 9X Solutions",
+      description:
+        "AI business solutions in Sri Lanka. AI agents, process automation, generative AI, predictive analytics, and document intelligence.",
+      type: "website",
+      url: `${common_texts.Company_website}/ai-business-solutions`,
+      images: [{ ...ogImage, alt: "9X Solutions AI Business Solutions" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        "AI Business Solutions | AI Development & Automation - 9X Solutions",
+      description:
+        "AI agents, process automation, generative AI, predictive analytics, and document intelligence for your business.",
+      images: [ogImage.url],
+    },
+  },
+  "/talk-to-us": {
+    title: "Contact Us | Talk to 9X Solutions - Software Development Sri Lanka",
+    description:
+      "Get in touch with 9X Solutions. Send us a message about your software project, AI solution, or business automation needs. We reply within one business day.",
+    keywords: [
+      "contact 9X Solutions",
+      "software development Sri Lanka contact",
+      "talk to us",
+      "business inquiry",
+      "software company contact",
+    ],
+    canonical: `${common_texts.Company_website}/talk-to-us`,
+    openGraph: {
+      title: "Contact Us | Talk to 9X Solutions - Software Development Sri Lanka",
+      description:
+        "Get in touch with 9X Solutions. Send us a message about your software project, AI solution, or business automation needs.",
+      type: "website",
+      url: `${common_texts.Company_website}/talk-to-us`,
+      images: [{ ...ogImage, alt: "9X Solutions Contact Us" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Contact Us | Talk to 9X Solutions - Software Development Sri Lanka",
+      description:
+        "Get in touch with 9X Solutions about your software project or business automation needs.",
+      images: [ogImage.url],
+    },
+  },
+  "/company/careers": {
+    title: "Careers | Join 9X Solutions - Software Engineering Jobs Sri Lanka",
+    description:
+      "Join the 9X Solutions team. We're hiring full-stack engineers, UI/UX designers, AI/ML engineers, and interns in Sri Lanka. Real work from day one.",
+    keywords: [
+      "careers Sri Lanka",
+      "software engineering jobs Sri Lanka",
+      "AI ML engineer jobs",
+      "UI/UX designer jobs",
+      "software internship Sri Lanka",
+      "join 9X Solutions",
+    ],
+    canonical: `${common_texts.Company_website}/company/careers`,
+    openGraph: {
+      title: "Careers | Join 9X Solutions - Software Engineering Jobs Sri Lanka",
+      description:
+        "Join the 9X Solutions team. We're hiring full-stack engineers, UI/UX designers, AI/ML engineers, and interns in Sri Lanka.",
+      type: "website",
+      url: `${common_texts.Company_website}/company/careers`,
+      images: [{ ...ogImage, alt: "9X Solutions Careers" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Careers | Join 9X Solutions - Software Engineering Jobs Sri Lanka",
+      description:
+        "Join the 9X Solutions team. Real work from day one.",
+      images: [ogImage.url],
+    },
+  },
+  "/legal/privacy-policy": {
+    title: "Privacy Policy | 9X Solutions",
+    description:
+      "9X Solutions privacy policy. How we collect, use, and protect your personal information when you visit our website.",
+    keywords: ["privacy policy", "9X Solutions", "data protection Sri Lanka"],
+    canonical: `${common_texts.Company_website}/legal/privacy-policy`,
+    openGraph: {
+      title: "Privacy Policy | 9X Solutions",
+      description:
+        "9X Solutions privacy policy. How we collect, use, and protect your personal information.",
+      type: "website",
+      url: `${common_texts.Company_website}/legal/privacy-policy`,
+      images: [{ ...ogImage, alt: "9X Solutions Privacy Policy" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Privacy Policy | 9X Solutions",
+      description:
+        "9X Solutions privacy policy.",
+      images: [ogImage.url],
+    },
+  },
+  "/legal/terms-and-conditions": {
+    title: "Terms and Conditions | 9X Solutions",
+    description:
+      "9X Solutions terms and conditions. The ground rules for using our website and getting in touch with us.",
+    keywords: ["terms and conditions", "9X Solutions", "website terms Sri Lanka"],
+    canonical: `${common_texts.Company_website}/legal/terms-and-conditions`,
+    openGraph: {
+      title: "Terms and Conditions | 9X Solutions",
+      description:
+        "9X Solutions terms and conditions. The ground rules for using our website.",
+      type: "website",
+      url: `${common_texts.Company_website}/legal/terms-and-conditions`,
+      images: [{ ...ogImage, alt: "9X Solutions Terms and Conditions" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Terms and Conditions | 9X Solutions",
+      description:
+        "9X Solutions terms and conditions.",
+      images: [ogImage.url],
+    },
+  },
+  "/technologies-we-use": {
+    title:
+      "Technologies We Use | Modern Stack for Software Development - 9X Solutions",
+    description:
+      "The technology stack we use at 9X Solutions. Next.js, React, Node.js, Python, AWS, Google Cloud, Azure, Docker, Kubernetes, and more for modern software development.",
+    keywords: [
+      "technology stack",
+      "Next.js",
+      "React",
+      "Node.js",
+      "Python",
+      "cloud computing",
+      "AI tools",
+      "software development technologies",
+      "DevOps tools Sri Lanka",
+    ],
+    canonical: `${common_texts.Company_website}/technologies-we-use`,
+    openGraph: {
+      title:
+        "Technologies We Use | Modern Stack for Software Development - 9X Solutions",
+      description:
+        "The technology stack we use at 9X Solutions. Next.js, React, Node.js, Python, AWS, Google Cloud, Azure, Docker, Kubernetes, and more.",
+      type: "website",
+      url: `${common_texts.Company_website}/technologies-we-use`,
+      images: [{ ...ogImage, alt: "9X Solutions Technologies We Use" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title:
+        "Technologies We Use | Modern Stack - 9X Solutions",
+      description:
+        "Next.js, React, Node.js, Python, AWS, Google Cloud, Azure, Docker, Kubernetes, and more.",
+      images: [ogImage.url],
+    },
+  },
+};
+
+export const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: common_texts.Company_name,
+  url: common_texts.Company_website,
+  logo: `${common_texts.Company_website}/images/logo.png`,
+  sameAs: [
+    common_texts.Social_links.Facebook,
+    `https://wa.me/${common_texts.Company_phone.replace(/\D/g, "")}`,
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: common_texts.Company_phone,
+    contactType: "customer service",
+    email: common_texts.Company_email,
+    availableLanguage: ["en"],
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "52B, Station Road",
+    addressLocality: "Maggona",
+    addressRegion: "Kalutara",
+    addressCountry: "LK",
+  },
+  founder: "9X Solutions",
+  foundingDate: "2026",
+} as const;
+
+export const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: common_texts.Company_name,
+  image: `${common_texts.Company_website}/images/og-image.jpg`,
+  url: common_texts.Company_website,
+  telephone: common_texts.Company_phone,
+  email: common_texts.Company_email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "52B, Station Road",
+    addressLocality: "Maggona",
+    addressRegion: "Kalutara",
+    postalCode: "",
+    addressCountry: "LK",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 6.4531,
+    longitude: 79.9623,
+  },
+  priceRange: "$$",
+  servesArea: "Sri Lanka",
+} as const;
+
+export const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: common_texts.Company_name,
+  url: common_texts.Company_website,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${common_texts.Company_website}/talk-to-us`,
+    "query-input": "required",
+  },
+} as const;
 
 export const footerRows: FooterRow[] = [
   {
@@ -67,13 +499,13 @@ export const footerRows: FooterRow[] = [
     title: "Resources",
     links: [{ label: "Contact us", href: "/talk-to-us" }],
   },
-  // {
-  //   title: "Legal",
-  //   links: [
-  //     { label: "Privacy policy", href: "/legal/privacy-policy" },
-  //     { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
-  //   ],
-  // },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy policy", href: "/legal/privacy-policy" },
+      { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
+    ],
+  },
 ];
 
 export const NAV_LINKS: NavLink[] = [
@@ -909,8 +1341,16 @@ export const technology_faqs = [
 ];
 
 export const talk_to_us_contacts = [
-  { label: "Email", value: common_texts.Company_email, href: "mailto:hello@yourcompany.com" },
-  { label: "Phone", value: common_texts.Company_phone, href: "tel:+940000000000" },
+  {
+    label: "Email",
+    value: common_texts.Company_email,
+    href: `mailto:${common_texts.Company_email}`,
+  },
+  {
+    label: "Phone",
+    value: common_texts.Company_phone,
+    href: `tel:${common_texts.Company_phone.replace(/\s/g, "")}`,
+  },
   { label: "Office", value: common_texts.Company_address, href: undefined },
 ];
 

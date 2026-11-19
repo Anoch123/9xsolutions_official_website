@@ -10,6 +10,9 @@ import {
   talk_to_us_nextSteps,
   talk_to_us_reasons,
 } from "@/lib/constants/helper-constants";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/talk-to-us"];
 
 function Glow() {
   return (

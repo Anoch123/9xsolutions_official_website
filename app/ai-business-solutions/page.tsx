@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@/components/footer";
 import Navbar from "@/components/Navbar";
 import { Arrow, ArrowUpRight, Eyebrow, Glow, HoverGlow, Icon, Numeral, Pill } from "@/components/ui/icons";
@@ -18,6 +16,9 @@ import {
   SERVICES,
 } from "@/lib/constants/helper-constants";
 import Link from "next/link";
+import { pageSEO } from "@/lib/constants/helper-constants";
+
+export const metadata = pageSEO["/ai-business-solutions"];
 
 const slug = (s: string) =>
   s
