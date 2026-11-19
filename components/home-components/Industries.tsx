@@ -5,7 +5,7 @@ export default function Industries() {
   return (
     <section
       aria-labelledby="industries-heading"
-      className="w-full bg-white px-6 py-20 md:px-12 md:py-28 xl:px-20"
+      className="w-full bg-white px-6 py-10 md:px-12 md:py-6 xl:px-20"
     >
       {/* Header */}
       <header className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-12">

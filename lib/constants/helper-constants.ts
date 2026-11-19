@@ -1634,7 +1634,7 @@ export const TESTIMONIALS: Testimonial[] = [
       "The platform provides a more organised approach to handling our internal processes. We value the effort put into building a solution that can support our operational requirements.",
     name: "Project Representative",
     role: "HR Representative",
-    company: "SLM HR Portal",
+    company: "HR Portal",
   },
 ];
 

@@ -18,7 +18,7 @@ export default function Home() {
       {/* <SelectedWork /> */}
       <WhyUs />
       <HowWeWork />
-      <Industries />
+      {/* <Industries /> */}
       <Partners />
       <FinalCTA />
       <Footer />
