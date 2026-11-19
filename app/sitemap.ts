@@ -10,9 +10,9 @@ const routes = [
   "/work-we-have-done",
   "/ai-business-solutions",
   "/talk-to-us",
-  "/company/careers",
-  "/legal/privacy-policy",
-  "/legal/terms-and-conditions",
+  // "/company/careers",
+  // "/legal/privacy-policy",
+  // "/legal/terms-and-conditions",
   "/technologies-we-use",
 ];
 
