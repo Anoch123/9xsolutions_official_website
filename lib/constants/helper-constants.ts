@@ -499,13 +499,13 @@ export const footerRows: FooterRow[] = [
     title: "Resources",
     links: [{ label: "Contact us", href: "/talk-to-us" }],
   },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy policy", href: "/legal/privacy-policy" },
-      { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
-    ],
-  },
+  // {
+  //   title: "Legal",
+  //   links: [
+  //     { label: "Privacy policy", href: "/legal/privacy-policy" },
+  //     { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
+  //   ],
+  // },
 ];
 
 export const NAV_LINKS: NavLink[] = [
