@@ -494,12 +494,14 @@ export const footerRows: FooterRow[] = [
       { label: "About us", href: "/our-story" },
       { label: "Our Works", href: "/work-we-have-done" },
       {label: "Contact us", href: "/talk-to-us" },
+      {label: "Careers", href: "/company/careers" },
     ],
   },
   {
     title: "Legal",
     links: [
       { label: "Privacy policy", href: "/legal/privacy-policy" },
+      { label: "Cookie policy", href: "/legal/cookie-policy" },
       { label: "Terms and conditions", href: "/legal/terms-and-conditions" },
     ],
   },
@@ -526,10 +528,10 @@ export const NAV_LINKS: NavLink[] = [
     href: "work-we-have-done",
   },
 
-  // {
-  //   label: "Products",
-  //   href: "our-Products",
-  // },
+  {
+    label: "Careers",
+    href: "company/careers",
+  },
 
   {
     label: "Our Story",
@@ -1509,34 +1511,34 @@ export const fieldClass =
 export const labelClass = "block text-[14px] font-medium text-slate-700";
 
 export const careers_roles = [
-  {
-    title: "Full-Stack Engineer",
-    team: "Engineering",
-    type: "Full-time",
-    location: "Sri Lanka",
-    body: "Build web products end to end with Next.js, TypeScript, and Node.js, from database design to polished interfaces.",
-  },
-  {
-    title: "UI/UX Designer",
-    team: "Design",
-    type: "Full-time",
-    location: "Sri Lanka",
-    body: "Turn client ideas into clear, beautiful interfaces, and work closely with engineers to see them shipped.",
-  },
-  {
-    title: "AI / ML Engineer",
-    team: "AI",
-    type: "Full-time",
-    location: "Sri Lanka",
-    body: "Design and deploy practical AI solutions, from LLM-powered assistants to data pipelines, that clients rely on.",
-  },
-  {
-    title: "Software Engineering Intern",
-    team: "Engineering",
-    type: "Internship",
-    location: "Sri Lanka",
-    body: "Learn on real client projects alongside senior engineers, with mentoring and a path to a full-time role.",
-  },
+  // {
+  //   title: "Full-Stack Engineer",
+  //   team: "Engineering",
+  //   type: "Full-time",
+  //   location: "Sri Lanka",
+  //   body: "Build web products end to end with Next.js, TypeScript, and Node.js, from database design to polished interfaces.",
+  // },
+  // {
+  //   title: "UI/UX Designer",
+  //   team: "Design",
+  //   type: "Full-time",
+  //   location: "Sri Lanka",
+  //   body: "Turn client ideas into clear, beautiful interfaces, and work closely with engineers to see them shipped.",
+  // },
+  // {
+  //   title: "AI / ML Engineer",
+  //   team: "AI",
+  //   type: "Full-time",
+  //   location: "Sri Lanka",
+  //   body: "Design and deploy practical AI solutions, from LLM-powered assistants to data pipelines, that clients rely on.",
+  // },
+  // {
+  //   title: "Software Engineering Intern",
+  //   team: "Engineering",
+  //   type: "Internship",
+  //   location: "Sri Lanka",
+  //   body: "Learn on real client projects alongside senior engineers, with mentoring and a path to a full-time role.",
+  // },
 ];
 
 export const careers_perks = [
@@ -1735,7 +1737,15 @@ export const privacy_policy_sections: LegalSection[] = [
         "The services you are interested in",
         "The message you write about your project",
       ],
-      // "Information collected automatically when you visit the site: basic technical data such as IP address, browser type, device, pages viewed, and the time of the visit. This is typically recorded in server and hosting logs.",
+      "When you visit, our hosting and infrastructure providers may process your IP address and basic request details (such as browser type, requested page, and time) in technical and security logs. We do not store your full IP address alongside your cookie preferences.",
+    ],
+  },
+  {
+    id: "ip-address",
+    title: "IP addresses and technical logs",
+    body: [
+      "An IP address is a network address, not a cookie. Our hosting and infrastructure providers may process IP addresses and related request data to deliver the site, diagnose issues, and protect against spam or abuse. These logs are managed by those providers under their own retention and security practices.",
+      "We do not use IP addresses for advertising or cross-site tracking, and the cookie preference saved in your browser does not contain your IP address.",
     ],
   },
   {
@@ -1768,6 +1778,7 @@ export const privacy_policy_sections: LegalSection[] = [
       [
         "Our email provider, which delivers your message to our team and sends your confirmation",
         "Our hosting and infrastructure providers, which serve the website",
+        "Google Analytics, only if configured and you enable optional analytics",
       ],
       "We may also disclose information if the law requires it, or to protect our rights, our users, or the security of the site.",
     ],
@@ -1776,8 +1787,8 @@ export const privacy_policy_sections: LegalSection[] = [
     id: "cookies",
     title: "Cookies and tracking",
     body: [
-      "This website does not use advertising or cross-site tracking cookies. Our hosting provider may use essential technical data to deliver and secure the site.",
-      "If we add analytics or other cookies in future, we will update this page and ask for consent where the law requires it.",
+      "We use an essential first-party cookie to remember your cookie choice for up to one year. Optional Google Analytics loads only if it is configured for this site and you choose to allow analytics. You can change your choice at any time using Cookie settings in the footer.",
+      "We do not currently use marketing cookies or cross-site advertising trackers. See our Cookie Policy for details.",
     ],
   },
   {
@@ -1917,6 +1928,45 @@ export const terms_and_conditions_sections: LegalSection[] = [
     title: "Governing law",
     body: [
       "These terms are governed by the laws of Sri Lanka. Any dispute that cannot be resolved informally will be subject to the exclusive jurisdiction of the courts of Sri Lanka.",
+    ],
+  },
+];
+
+export const cookie_policy_sections: LegalSection[] = [
+  {
+    id: "what-cookies",
+    title: "What cookies and browser storage are",
+    body: [
+      "Cookies are small text files saved by a website in your browser. An IP address is not a cookie; see our Privacy Policy for details about technical logs.",
+    ],
+  },
+  {
+    id: "essential",
+    title: "Essential preference storage",
+    body: [
+      "We save your cookie preference in a first-party cookie named “consent” so the site can remember your choice. The preference records whether optional analytics are allowed and the policy version. It lasts for up to one year, after which we will ask again.",
+      "This storage is necessary to remember your privacy choice and cannot be switched off through the preference panel. You can remove it by clearing this site’s cookies.",
+    ],
+  },
+  {
+    id: "analytics",
+    title: "Optional analytics",
+    body: [
+      "If Google Analytics is configured for this website, it is loaded only after you opt in to analytics. Google Analytics may set cookies such as _ga to measure site usage. You can decline analytics or withdraw your choice at any time using Cookie settings in the footer. If analytics is not configured, accepting it will not load an analytics service.",
+    ],
+  },
+  {
+    id: "ip",
+    title: "IP addresses are not cookies",
+    body: [
+      "Your IP address may be processed by our hosting and infrastructure providers in connection and security logs to deliver and protect the website. We do not save it in the cookie preference or use it for advertising. More information is in our Privacy Policy.",
+    ],
+  },
+  {
+    id: "manage",
+    title: "Managing your preferences",
+    body: [
+      "Choose “Accept all” to allow essential storage and optional analytics, or “Essential only” to keep optional analytics disabled. You can reopen Cookie settings from the footer at any time. You can also clear this site’s cookies through your browser settings; doing so removes your saved preference.",
     ],
   },
 ];

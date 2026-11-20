@@ -7,6 +7,8 @@ import {
   organizationSchema,
   webSiteSchema,
 } from "@/lib/constants/helper-constants";
+import CookieConsent from "@/components/CookieConsent";
+import ConsentScripts from "@/components/ConsentScripts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -77,18 +79,26 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
-      <body className={`min-h-full flex flex-col ${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body
+        className={`min-h-full flex flex-col ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      >
+        <CookieConsent />
+        <ConsentScripts />
         {children}
       </body>
     </html>

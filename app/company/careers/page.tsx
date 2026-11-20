@@ -145,7 +145,7 @@ export default function Careers() {
 
         {careers_roles.length > 0 ? (
           <ul className="mt-12 flex flex-col gap-3">
-            {careers_roles.map((r) => (
+            {careers_roles.map((r: { title: string; team: string; type: string; location: string; body: string }) => (
               <li key={r.title}>
                 <a
                   href={applyHref(r.title)}
@@ -266,7 +266,7 @@ export default function Careers() {
       </section>
 
       {/* Open application */}
-      <section className="w-full bg-white p-3 pt-0 md:p-5 md:pt-0">
+      {/* <section className="w-full bg-white p-3 pt-0 md:p-5 md:pt-0">
         <div className="relative overflow-hidden rounded-[32px] bg-[#0B1020] px-6 py-16 text-white md:rounded-[48px] md:px-12 md:py-20 xl:px-20">
           <Glow />
           <div className="relative flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
@@ -307,7 +307,7 @@ export default function Careers() {
             .
           </p>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </main>

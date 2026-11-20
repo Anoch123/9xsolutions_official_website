@@ -1,4 +1,4 @@
-import LegalLayout, { LegalSection } from "@/components/legal-layout";
+import LegalLayout from "@/components/legal-layout";
 import { common_texts, pageSEO, terms_and_conditions_sections } from "@/lib/constants/helper-constants";
 
 export const metadata = pageSEO["/legal/terms-and-conditions"];
